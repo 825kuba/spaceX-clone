@@ -1,0 +1,63 @@
+// GENRRAL FOOTER STYLES
+/////////////////////////
+.footer {
+  font-size: 1.2rem;
+  padding: 4.5rem 0;
+
+  @media only screen and (min-width: $bp-medium) {
+    font-size: 1.1rem;
+    padding: 3.5rem 0;
+  }
+
+  @media only screen and (min-width: $bp-large) {
+    padding: 4.5rem 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  // GENERAL STYLES FOR FOOTER LINKS
+  a:link,
+  a:visited {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease-in;
+    text-transform: uppercase;
+  }
+  a:hover,
+  a:active {
+    color: $color-grey;
+    text-decoration: none;
+  }
+
+  // MAIN ITEM IN FOOTER
+  &__legal {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: $color-grey;
+
+    @media only screen and (min-width: $bp-large) {
+      margin-bottom: 0;
+    }
+  }
+
+  // FOOTER LINKS
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+
+    @media only screen and (min-width: $bp-medium) {
+      gap: 4rem;
+    }
+  }
+
+  &__item {
+    list-style: none;
+  }
+}

@@ -1,0 +1,125 @@
+//GENERAL STYLES FOR SECTIONS
+//////////////////////////////
+.section {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  // TOP SECTION TRANSITION STYLES
+  &--first .heading--small {
+    transition: transform 1.5s cubic-bezier(0.25, 1, 0.25, 1) 0.1s;
+  }
+
+  &--first .heading {
+    transition: transform 1.5s cubic-bezier(0.25, 1, 0.25, 1) 0.2s;
+  }
+
+  &--first .cta {
+    transition: transform 1.5s cubic-bezier(0.25, 1, 0.25, 1) 0.4s,
+      color 0.4s cubic-bezier(0.25, 1, 0.25, 1);
+  }
+
+  //BOX CONTAINING ALL TEXT AND CTA BUTTON
+  &__box {
+    position: absolute;
+    bottom: 10%;
+    left: 2rem;
+    max-width: 40vw;
+
+    // STYLES FOR SECTION HEADINGS
+    ///////////////////////////////
+    & .heading--small {
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      font-weight: normal;
+      opacity: 1;
+      transition: transform 1.5s cubic-bezier(0.25, 1, 0.25, 1);
+
+      &.hidden {
+        opacity: 0;
+        transform: translateY(5rem);
+      }
+    }
+
+    & .heading {
+      font-size: 3.4rem;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      text-align: left;
+      line-height: 1.1;
+      opacity: 1;
+      transition: transform 1.5s cubic-bezier(0.25, 1, 0.25, 1);
+
+      &.hidden {
+        opacity: 0;
+        transform: translateY(5rem);
+      }
+
+      @media only screen and (min-width: $bp-medium) {
+        font-size: 4.4rem;
+      }
+    }
+
+    @media only screen and (min-width: $bp-medium) {
+      bottom: 15%;
+      left: 5rem;
+    }
+  }
+
+  // SECTIONS BG IMAGES
+  //////////////////////
+  &:nth-of-type(1) {
+    background-image: url('../img/S20_Chopstick_Stack_Desktop.jpg');
+  }
+  &:nth-of-type(2) {
+    background-image: url('../img/Homepage_Star4-7_DSC_9788_Desktop.jpg');
+  }
+  &:nth-of-type(3) {
+    background-image: url('../img/WEBSITE-DESKTOP_1425.jpg');
+  }
+  &:nth-of-type(4) {
+    background-image: url('../img/DESKTOP_COSMO_HOMEPAGE.jpg');
+  }
+  &:nth-of-type(5) {
+    background-image: url('../img/CRS24_Homepage_DESKTOP.jpg');
+  }
+  &:nth-of-type(6) {
+    background-image: url('../img/hls-resized-2.jpg');
+  }
+
+  // ANIMATED SCROLL ICON
+  & .scroll-icon {
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 15px); // 30px total width
+    animation: move-and-fade 3s ease-in-out infinite;
+    display: none;
+
+    @media only screen and (min-width: $bp-large) {
+      display: initial;
+    }
+
+    // SCROLL ICON ANIMATION
+    @keyframes move-and-fade {
+      0% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      40% {
+        opacity: 1;
+      }
+
+      60% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+}

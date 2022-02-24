@@ -1,0 +1,44 @@
+// GENERAL CTA BTN STYLES
+.cta {
+  position: relative;
+  z-index: 30;
+  width: 160px;
+  height: 55px;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+  border: 2px solid white;
+  margin-top: 2rem;
+  transition: transform 1.5s cubic-bezier(0.25, 1, 0.25, 1),
+    color 0.4s cubic-bezier(0.25, 1, 0.25, 1);
+  opacity: 1;
+
+  // USED FOR REVEALING ELEMENT WITH SCROLLING
+  &.hidden {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+
+  &:hover {
+    color: black;
+  }
+
+  // USED FOR HOVER BACKGROUND EFFECT - SET WITH JS
+  & .cta-background {
+    z-index: -100;
+    position: absolute;
+    background-color: white;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: scaleY(0);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
